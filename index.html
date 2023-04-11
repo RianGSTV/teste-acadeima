@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vamos para a academia hoje?</title>
+	<style>
+		.yes {
+			background-color: blue;
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.no {
+			background-color: red;
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function changeText() {
+			var noButton = document.getElementById("no-button");
+			if (noButton.innerHTML === "Não") {
+				noButton.innerHTML = "Sim";
+				noButton.style.backgroundColor = "blue";
+			} else {
+				noButton.innerHTML = "Não";
+				noButton.style.backgroundColor = "red";
+				alert("Parabéns, vamos para a academia!");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Vamos para a academia hoje?</h1>
+	<p>Clique em uma das opções abaixo:</p>
+	<div>
+		<button id="yes-button" class="yes" onclick="changeText()">Sim</button>
+		<button id="no-button" class="no" onclick="changeText()">Não</button>
+	</div>
+</body>
+</html>
