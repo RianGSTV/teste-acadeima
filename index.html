@@ -2,20 +2,71 @@
 <html>
 <head>
 	<title>Vamos para a academia hoje?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		.yes {
-			background-color: blue;
-			color: white;
-			padding: 10px;
-			border-radius: 5px;
-			cursor: pointer;
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
 		}
-		.no {
-			background-color: red;
+		
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		h1 {
+			font-size: 36px;
+			margin: 0;
+			padding: 0;
+		}
+		
+		p {
+			font-size: 18px;
+			margin: 20px 0;
+			padding: 0;
+		}
+		
+		button {
+			background-color: #4CAF50;
+			border: none;
 			color: white;
-			padding: 10px;
-			border-radius: 5px;
+			padding: 16px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
 			cursor: pointer;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+			width: 100%;
+			max-width: 200px;
+		}
+		
+		button:hover {
+			background-color: #3e8e41;
+		}
+		
+		.yes {
+			background-color: #1e88e5;
+		}
+		
+		.no {
+			background-color: #d32f2f;
+		}
+		
+		@media only screen and (max-width: 600px) {
+			h1 {
+				font-size: 24px;
+			}
+			
+			p {
+				font-size: 16px;
+			}
 		}
 	</style>
 	<script>
@@ -23,21 +74,25 @@
 			var noButton = document.getElementById("no-button");
 			if (noButton.innerHTML === "Não") {
 				noButton.innerHTML = "Sim";
-				noButton.style.backgroundColor = "blue";
+				noButton.classList.remove("no");
+				noButton.classList.add("yes");
 			} else {
 				noButton.innerHTML = "Não";
-				noButton.style.backgroundColor = "red";
+				noButton.classList.remove("yes");
+				noButton.classList.add("no");
 				alert("Parabéns, vamos para a academia!");
 			}
 		}
 	</script>
 </head>
 <body>
-	<h1>Vamos para a academia hoje?</h1>
-	<p>Clique em uma das opções abaixo:</p>
-	<div>
-		<button id="yes-button" class="yes" onclick="changeText()">Sim</button>
-		<button id="no-button" class="no" onclick="changeText()">Não</button>
+	<div class="container">
+		<h1>Vamos para a academia hoje?</h1>
+		<p>Clique em uma das opções abaixo:</p>
+		<div>
+			<button id="yes-button" class="yes" onclick="alert('Parabéns, vamos para a academia!')">Sim</button>
+			<button id="no-button" class="no" onclick="changeText()">Não</button>
+		</div>
 	</div>
 </body>
 </html>
